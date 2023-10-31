@@ -12,7 +12,7 @@ import com.example.littlelemon.screens.Profile
 fun Navigation(navController: NavHostController) {
 
     // TODO: Add Logic for startDestination
-    val startDestination = Onboarding.route
+    val startDestination = Home.route
 
     NavHost(navController = navController, startDestination = startDestination) {
         composable(Home.route) {

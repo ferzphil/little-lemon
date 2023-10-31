@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.RoomDatabase
 
-@Entity("menu_table")
+@Entity("MenuItem")
 data class MenuItem(
     @PrimaryKey val id: Int,
     val title: String,
@@ -21,6 +21,9 @@ data class MenuItem(
 
 @Dao
 interface MenuDao {
+
+    @Query("SELECT * FROM MenuItem")
+    fun getMenuItems()
 
     @Query("SELECT * FROM MenuItem WHERE id = :itemId")
     fun getMenuItemById(itemId: Int): List<MenuItem>
